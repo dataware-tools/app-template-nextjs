@@ -25,11 +25,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## How to create this template?
 
-1. Execute create-next-app
+### 1. Execute create-next-app
 
 This template bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-2. Install and initialize eslint
+### 2. Install and initialize eslint
 
 Allow [official Getting Started](https://eslint.org/docs/user-guide/getting-started).
 
@@ -52,7 +52,7 @@ eslint-plugin-react@latest @typescript-eslint/eslint-plugin@latest eslint-config
 ✔ Would you like to install them now with npm? · No / Yes
 ```
 
-3. Add eslint rules, extends, plugin.
+### 3. Add eslint rules, extends, plugin.
 
 [Explanation of defference between rules, extends, plugin is here.](https://blog.ojisan.io/eslint-plugin-and-extend)
 
@@ -65,23 +65,23 @@ Below is example. (Probably, some plugin was already configured when initializin
 - [eslint-plugin-imort](https://github.com/benmosher/eslint-plugin-import)
 - [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
 
-4. Install and initialize prettier.
+### 4. Install and initialize prettier.
 
 Allow [official Getting Started](https://prettier.io/docs/en/install.html).
 
 Note that [You may need to configure eslint](https://prettier.io/docs/en/install.html#eslint-and-other-linters).
 
-5. Configure prettier
+### 5. Configure prettier
 
 Configure your favorite [options](https://prettier.io/docs/en/options.html).
 
 I think default options is better for many people (not best). Beacuse prettier team decided default value by deep thinking, probably.
 
-6. Add editorconfig file
+### 6. Add editorconfig file
 
 See [official site](https://editorconfig.org/)
 
-7. Add recomended extensions for editor
+### 7. Add recomended extensions for editor
 
 Example for VSCode.
 
