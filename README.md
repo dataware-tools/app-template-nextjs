@@ -1,3 +1,29 @@
+## First thing to do
+
+The things you have to do after creating a repository based on this template are as follows:
+
+- Change `name` in `package.json` to the name of your application
+- Change `repository` in `package.json` to the newly created repository
+- Change `homepage` in `package.json` to whatever you want
+  - This should be the same as `urlPrefix` in
+    [App Catalog](https://github.com/dataware-tools/app-common/blob/master/src/app/catalog.tsx)
+    if you want to register your application to dataware-tools
+
+## How to build docker-image
+
+```bash
+$ export DOCKER_BUILDKIT=1
+$ docker build -t <image name> --ssh default .
+
+```
+
+On MacOS, you may have to run the following commands before building the image.
+
+```bash
+$ ssh-add
+
+```
+
 ## Getting started
 
 First, run the development server:
@@ -21,9 +47,9 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy
-
 ## How to create this template?
+
+TODO: write this.
 
 ### 1. Execute create-next-app
 
@@ -64,6 +90,7 @@ Below is example. (Probably, some plugin was already configured when initializin
 - [eslint-plugin-eslint-comments](https://mysticatea.github.io/eslint-plugin-eslint-comments/)
 - [eslint-plugin-imort](https://github.com/benmosher/eslint-plugin-import)
 - [eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y)
+- eslint-plugin-compat
 
 ### 4. Install and initialize prettier.
 
@@ -91,3 +118,4 @@ Example for VSCode.
 - [dbaeumer.vscode-eslint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [esbenp.prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [aaron-bond.better-comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
+- stylelint-plugin
