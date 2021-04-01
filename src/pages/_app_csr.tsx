@@ -1,4 +1,5 @@
 import { AppState, Auth0Provider } from "@auth0/auth0-react";
+import { PageWrapper } from "../components/organisms/PageWrapper";
 
 import { AUTH_CONFIG } from "@dataware-tools/app-common";
 
@@ -21,17 +22,15 @@ export const onRedirectCallback = (appState: AppState): void => {
 
 const SafeHydrate = (props: SafeHydrateProps): JSX.Element => {
   return (
-    <>
-      <Auth0Provider
-        domain={authConfig.domain}
-        clientId={authConfig.clientId}
-        audience={authConfig.apiUrl}
-        redirectUri={redirectUri}
-        onRedirectCallback={onRedirectCallback}
-      >
-        {props.children}
-      </Auth0Provider>
-    </>
+    <Auth0Provider
+      domain={authConfig.domain}
+      clientId={authConfig.clientId}
+      audience={authConfig.apiUrl}
+      redirectUri={redirectUri}
+      onRedirectCallback={onRedirectCallback}
+    >
+      <PageWrapper>{props.children}</PageWrapper>
+    </Auth0Provider>
   );
 };
 
