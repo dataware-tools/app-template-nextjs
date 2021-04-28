@@ -1,3 +1,7 @@
-export function isNonNullable<T>(val: T): val is NonNullable<T> {
-  return val != null;
-}
+export const APP_ROUTE = {
+  HOME: "/",
+};
+
+export const SwrOptions = {
+  errorRetryCount: 1,
+};
