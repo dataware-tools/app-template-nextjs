@@ -44,7 +44,7 @@ module.exports = {
   },
   rules: {
     "eslint-comments/no-unused-disable": "error",
-    // This rule make mean only when using "prop-type" libraly(https://ja.reactjs.org/docs/typechecking-with-proptypes.html)
+    // This rule make mean only when using "prop-type" library(https://ja.reactjs.org/docs/typechecking-with-proptypes.html)
     "react/prop-types": "off",
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/FAQ.md#eslint-plugin-import
     "import/named": "off",
@@ -63,5 +63,7 @@ module.exports = {
     "@typescript-eslint/no-use-before-define": ["error"],
     // in Next project, react need not be imported every file.
     "react/react-in-jsx-scope": "off",
+    // API response is snake case.
+    camelcase: "off",
   },
 };
