@@ -6,7 +6,7 @@ The things you have to do after creating a repository based on this template are
 - Change `repository` in `package.json` to the newly created repository
 - Change `homepage` in `package.json` to your application name
   - This should be the same as `urlPrefix` in
-    [App Catalog](https://github.com/dataware-tools/app-common/blob/master/src/app/catalog.tsx)
+    [App Catalog](https://github.com/dataware-tools/protocols/blob/master/catalogs/app.json)
     if you want to register your application to dataware-tools
 
 ## How to build docker-image
