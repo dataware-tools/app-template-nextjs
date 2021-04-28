@@ -14,14 +14,12 @@ The things you have to do after creating a repository based on this template are
 ```bash
 $ export DOCKER_BUILDKIT=1
 $ docker build -t app:latest --ssh default .
-
 ```
 
 On MacOS or Linux, you may have to run the following commands before building the image.
 
 ```bash
 $ ssh-add
-
 ```
 
 ## How to run docker-container
@@ -30,7 +28,6 @@ After success of building image
 
 ```bash
 $ dc up
-
 ```
 
 ## Getting started
@@ -111,6 +108,5 @@ You can start editing the page by modifying `pages/*.tsx`. The page auto-updates
 
 - add example for immer, msw
 - write HowToMakeThisTemplate.md
-- add extensions for VSCode
 - add container for development
 - add .devcontainer.json example for supporting vscode remote container
