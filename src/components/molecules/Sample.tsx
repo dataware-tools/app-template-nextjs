@@ -1,35 +1,37 @@
-import { API_CATALOG, FetchStatus, fetchApi } from "@dataware-tools/app-common";
-import { Button, Container } from "@material-ui/core";
+import { databaseStore } from "@dataware-tools/app-common";
+import { Button } from "@material-ui/core";
 
 import { useAuth0 } from "@auth0/auth0-react";
-import { useState } from "react";
+import useSWR, { mutate } from "swr";
 
-const apiURL: string =
-  (process.env.REACT_APP_BACKEND_API_PREFIX || "/api/latest") +
-  API_CATALOG.authTest.endpoint;
+const apiUrlBase = process.env.NEXT_PUBLIC_BACKEND_API_PREFIX || "/api/latest";
 
 const Sample = (): JSX.Element => {
   const { user, getAccessTokenSilently } = useAuth0();
-  const [apiResult, setApiResult] = useState<any>(undefined);
+  const fetchAPI = async () => {
+    databaseStore.OpenAPI.TOKEN = await getAccessTokenSilently();
+    databaseStore.OpenAPI.BASE = apiUrlBase;
+    const Res = await databaseStore.DatabaseService.listDatabases();
+    return Res;
+  };
+  const URL = `${apiUrlBase}/databases`;
+  const { data, error } = useSWR(URL, fetchAPI);
 
   return (
     <div>
       <h1>Hello {user ? user.name : "world"}</h1>
       <Button
-        variant="contained"
-        disableElevation
         onClick={() => {
-          getAccessTokenSilently().then((accessToken: string) => {
-            fetchApi(apiURL, accessToken, setApiResult);
-          });
+          mutate(URL);
         }}
       >
-        Test API
+        revalidate API
       </Button>
-      <FetchStatus {...apiResult} />
-      {apiResult && apiResult.isFetchDone && (
-        <Container maxWidth="sm">{JSON.stringify(apiResult)}</Container>
-      )}
+      {error ? (
+        <div>error: {JSON.stringify(error)}</div>
+      ) : data ? (
+        <div>data: {JSON.stringify(data)}</div>
+      ) : null}
     </div>
   );
 };
