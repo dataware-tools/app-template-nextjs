@@ -1,8 +1,4 @@
-import {
-  authConfig,
-  onRedirectCallback,
-  redirectUri,
-} from "../src/pages/_app_csr";
+import { authConfig, onRedirectCallback, redirectUri } from "../src/utils";
 
 import { Auth0Provider } from "@auth0/auth0-react";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -11,6 +7,8 @@ import { ThemeProvider, StylesProvider } from "@material-ui/core/styles";
 import { theme } from "@dataware-tools/app-common";
 import { SWRConfig } from "swr";
 import { SwrOptions } from "../src/utils";
+import { userActionsState } from "../src/globalStates";
+import { RecoilRoot } from "recoil";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -36,7 +34,13 @@ export const decorators = [
                 redirectUri={redirectUri}
                 onRedirectCallback={onRedirectCallback}
               >
-                {story()}
+                <RecoilRoot
+                  initializeState={({ set }) =>
+                    set(userActionsState, ["databases", "metadata"])
+                  }
+                >
+                  {story()}
+                </RecoilRoot>
               </Auth0Provider>
             </SWRConfig>
           </ThemeProvider>
