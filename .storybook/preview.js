@@ -7,8 +7,6 @@ import { ThemeProvider, StylesProvider } from "@material-ui/core/styles";
 import { theme } from "@dataware-tools/app-common";
 import { SWRConfig } from "swr";
 import { SwrOptions } from "../src/utils";
-import { userActionsState } from "../src/globalStates";
-import { RecoilRoot } from "recoil";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -34,13 +32,7 @@ export const decorators = [
                 redirectUri={redirectUri}
                 onRedirectCallback={onRedirectCallback}
               >
-                <RecoilRoot
-                  initializeState={({ set }) =>
-                    set(userActionsState, ["databases", "metadata"])
-                  }
-                >
-                  {story()}
-                </RecoilRoot>
+                {story()}
               </Auth0Provider>
             </SWRConfig>
           </ThemeProvider>
