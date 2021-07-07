@@ -13,7 +13,8 @@ The things you have to do after creating a repository based on this template are
 
 ```bash
 $ export DOCKER_BUILDKIT=1
-$ docker build -t app:latest --ssh default .
+$ docker build -t app:latest --ssh default --secret id=npmrc,src=${HOME}/.npmrc .
+
 ```
 
 On MacOS or Linux, you may have to run the following commands before building the image.
