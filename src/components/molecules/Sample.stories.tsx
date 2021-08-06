@@ -1,12 +1,14 @@
 import { Story, Meta } from "@storybook/react";
-import { SampleDOM, SampleDOMProps } from "./Sample";
+import { SamplePresentation, SamplePresentationProps } from "./Sample";
 
 export default {
-  component: SampleDOM,
+  component: SamplePresentation,
   title: "Sample",
 } as Meta;
 
-const Template: Story<SampleDOMProps> = (args) => <SampleDOM {...args} />;
+const Template: Story<SamplePresentationProps> = (args) => (
+  <SamplePresentation {...args} />
+);
 export const Default = Template.bind({});
 Default.args = {
   user: { name: "test" },
