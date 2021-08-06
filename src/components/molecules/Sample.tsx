@@ -6,18 +6,18 @@ import useSWR, { mutate } from "swr";
 
 const apiUrlBase = process.env.NEXT_PUBLIC_BACKEND_API_PREFIX || "/api/latest";
 
-export type SampleDOMProps = {
+export type SamplePresentationProps = {
   user: any;
   onClick: () => void;
   error: any;
   data: any;
 };
-export const SampleDOM = ({
+export const SamplePresentation = ({
   user,
   onClick,
   error,
   data,
-}: SampleDOMProps): JSX.Element => {
+}: SamplePresentationProps): JSX.Element => {
   return (
     <div>
       <h1>Hello {user ? user.name : "world"}</h1>
@@ -43,7 +43,7 @@ export const Sample = (): JSX.Element => {
   const { data, error } = useSWR(URL, fetchAPI);
 
   return (
-    <SampleDOM
+    <SamplePresentation
       user={user}
       data={data}
       error={error}
