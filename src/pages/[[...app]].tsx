@@ -1,8 +1,8 @@
-import { homepage } from "../../package.json";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { APP_ROUTE } from "utils/index";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { homepage } from "../../package.json";
 import { IndexPage } from "components/pages/IndexPage";
+import { APP_ROUTE } from "utils/index";
 
 const Page = (): JSX.Element | null => {
   const [isMounted, setIsMounted] = useState(false);
