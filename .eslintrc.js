@@ -15,8 +15,8 @@ module.exports = {
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
-    "plugin:jsx-a11y/recommended",
-    "plugin:compat/recommended",
+    // "plugin:jsx-a11y/recommended",
+    // "plugin:compat/recommended",
     "prettier",
   ],
   parser: "@typescript-eslint/parser",
@@ -27,7 +27,7 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint", "import"],
+  plugins: ["react", "@typescript-eslint", "import", "unused-imports"],
   settings: {
     react: {
       version: "detect",
@@ -65,5 +65,9 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     // API response is snake case.
     camelcase: "off",
+    "react/display-name": "off",
+    "sort-imports": "off",
+    "import/order": ["warn", { alphabetize: { order: "asc" } }],
+    "unused-imports/no-unused-imports": "error",
   },
 };
