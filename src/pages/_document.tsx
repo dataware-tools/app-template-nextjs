@@ -1,8 +1,8 @@
+import { theme } from "@dataware-tools/app-common";
+import { ServerStyleSheets } from "@material-ui/styles";
 import Document, { Head, Html, Main, NextScript } from "next/document";
 
 import React from "react";
-import { ServerStyleSheets } from "@material-ui/core/styles";
-import { theme } from "@dataware-tools/app-common";
 import { homepage } from "../../package.json";
 
 export const MetaHeader = (): JSX.Element => {
@@ -24,10 +24,7 @@ export const MetaHeader = (): JSX.Element => {
       {/* PWA primary color */}
       <meta name="theme-color" content={theme.palette.primary.main} />
       <meta charSet="utf-8" />
-      <meta
-        name="description"
-        content="Human Dataware Lab application template"
-      />
+      <meta name="description" content="Human Dataware Lab data browser" />
     </>
   );
 };

@@ -1,7 +1,6 @@
-import { databaseStore } from "@dataware-tools/app-common";
-import { Button } from "@material-ui/core";
-
 import { useAuth0 } from "@auth0/auth0-react";
+import { databaseStore } from "@dataware-tools/app-common";
+import Button from "@material-ui/core/Button";
 import useSWR, { mutate } from "swr";
 
 const apiUrlBase = process.env.NEXT_PUBLIC_BACKEND_API_PREFIX || "/api/latest";
