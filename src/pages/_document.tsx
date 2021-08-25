@@ -3,7 +3,7 @@ import { ServerStyleSheets } from "@material-ui/styles";
 import Document, { Head, Html, Main, NextScript } from "next/document";
 
 import React from "react";
-import { homepage } from "../../package.json";
+import packageInfo from "../../package.json";
 
 export default class MyDocument extends Document {
   render(): JSX.Element {
@@ -22,7 +22,7 @@ export default class MyDocument extends Document {
         rel="stylesheet"
       />
     */}
-          <link rel="icon" href={`${homepage}/favicon.ico`} />
+          <link rel="icon" href={`${packageInfo.homepage}/favicon.ico`} />
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.primary.main} />
           <meta charSet="utf-8" />

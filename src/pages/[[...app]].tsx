@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { homepage } from "../../package.json";
+import packageInfo from "../../package.json";
 import { IndexPage } from "components/pages/IndexPage";
 import { APP_ROUTE } from "utils/index";
 
@@ -16,7 +16,7 @@ const Page = (): JSX.Element | null => {
   }
 
   return (
-    <Router basename={homepage}>
+    <Router basename={packageInfo.homepage}>
       <Switch>
         <Route exact path={APP_ROUTE.HOME}>
           <IndexPage />
