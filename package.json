@@ -14,9 +14,9 @@
     "lint:stylelint": "stylelint ./src",
     "lint:tsc": "tsc --noEmit --project tsconfig.json",
     "test:unit": "jest",
+    "test:build": "cross-env NODE_OPTIONS=\"--max-old-space-size=4096\" run-s build",
     "test:visual-regression": "build-storybook --quiet && loki --requireReference --reactUri file:./storybook-static",
     "format": "prettier --write src/*",
-    "test:build": "cross-env NODE_OPTIONS=\"--max-old-space-size=4096\" run-s build",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "prepare": "husky install"
