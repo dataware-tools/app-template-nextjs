@@ -4,7 +4,9 @@ The things you have to do after creating a repository based on this template are
 
 - Change `name` in `package.json` to the name of your application
 - Change `repository` in `package.json` to the newly created repository
+  - This property is used for link in footer in default.
 - Change `homepage` in `package.json` to your application name
+  - This property is used for root path of application in default.
   - This should be the same as `urlPrefix` in
     [App Catalog](https://github.com/dataware-tools/protocols/blob/master/catalogs/app.json)
     if you want to register your application to dataware-tools
@@ -35,6 +37,8 @@ yarn dev
 ```
 
 Open http://localhost:3000/{homepage} with your browser to see the result.
+
+(If you configured `homepage` property of `package.json` to `app-template-nextjs` , you should open http://localhost:3000/app-template-nextjs)
 
 You can start editing the page by modifying `pages/*.tsx`, `components/*.tsx`. The page auto-updates as you edit the file.
 
