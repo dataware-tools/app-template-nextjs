@@ -29,7 +29,7 @@ jobs:
         run: (docker run --privileged --name app-test app:test) &
 
       - name: Exec test
-        run: docker exec -it app-test npm run test
+        run: docker exec app-test npm run test
 
   build-production-image:
     runs-on: ubuntu-latest
