@@ -3,7 +3,7 @@ name: Build and test
 on: [push]
 
 jobs:
-  docker:
+  build-image:
     runs-on: self-hosted
     timeout-minutes: 300
 
@@ -41,3 +41,27 @@ jobs:
       - name: Scan image
         run: trivy --exit-code 0 --no-progress app:latest
 
+  test:
+    runs-on: ubuntu-18.04
+    timeout-minutes: 300
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup ssh-agent
+        uses: webfactory/ssh-agent@v0.5.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
+          registry-url: "https://npm.pkg.github.com"
+
+      - name: Install deps
+        run: npm install --unsafe-perm
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.REPO_ACCESS_TOKEN}}
+
+      - name: Test
+        run: npm run test
