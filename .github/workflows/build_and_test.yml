@@ -8,6 +8,8 @@ jobs:
     timeout-minutes: 300
 
     steps:
+      - uses: actions/checkout@v2
+
       - name: Build test image
         env:
           NPM_REGISTRY: https://npm.pkg.github.com
