@@ -1,9 +1,12 @@
 name: dependabot-auto-merge
 
 on:
-  check_suite:
+  workflow_run:
     types:
       - completed
+    workflows:
+      # List all required workflow names here.
+      - "Build and test"
 
 jobs:
   merge-me:
@@ -11,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Merge me!
+        if: ${{ github.event.workflow_run.conclusion == 'success' }}
         uses: ridedott/merge-me-action@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
