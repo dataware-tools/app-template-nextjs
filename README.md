@@ -48,7 +48,7 @@ You can start editing the page by modifying `pages/*.tsx`, `components/*.tsx`. T
 
 ```bash
 $ export DOCKER_BUILDKIT=1
-$ docker build -t app:latest --ssh default --secret id=npmrc,src=${HOME}/.npmrc .
+$ docker build -t app:latest --secret id=npmrc,src=${HOME}/.npmrc .
 ```
 
 On MacOS or Linux, you may have to run the following commands before building the image.
@@ -62,7 +62,7 @@ $ ssh-add
 After success of building image
 
 ```bash
-$ dc up
+$ docker-compose up
 ```
 
 ## Npm scripts
