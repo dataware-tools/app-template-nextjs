@@ -143,6 +143,12 @@ $ docker-compose up
 
   High customizable linter for CSS/Sass/CSSinJS.
 
+### Recommended CLI tools
+
+- [volta](https://volta.sh/)
+
+  JavaScript tool manager like nvm, n
+
 ## Note
 
 - This template is intend to use for Single Page Application. So if you want create SSR, or SSG application, you should change some config of this template
@@ -151,4 +157,3 @@ $ docker-compose up
 
 - Add container for development
 - Add .devcontainer.json example for supporting vscode remote container
-- Automate test process in github action
