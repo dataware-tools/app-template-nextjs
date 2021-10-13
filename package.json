@@ -1,6 +1,10 @@
 {
   "name": "@dataware-tools/app-template-nextjs",
   "version": "0.1.0",
+  "engines": {
+    "node": "^16.11.0",
+    "npm": "^8.0.0"
+  },
   "private": true,
   "repository": "https://github.com/dataware-tools/app-template-nextjs.git",
   "homepage": "/app-template-nextjs",
@@ -108,5 +112,8 @@
     "maintained Node versions",
     "last 2 Safari versions",
     "last 2 Samsung versions"
-  ]
+  ],
+  "volta": {
+    "node": "16.11.1"
+  }
 }
