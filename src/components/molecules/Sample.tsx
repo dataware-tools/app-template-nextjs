@@ -34,7 +34,7 @@ export const Sample = (): JSX.Element => {
   const { user, getAccessTokenSilently } = useAuth0();
   const fetchAPI = async () => {
     databaseStore.OpenAPI.TOKEN = await getAccessTokenSilently();
-    databaseStore.OpenAPI.BASE = apiUrlBase;
+    databaseStore.OpenAPI.BASE = apiUrlBase + "/meta_store";
     const Res = await databaseStore.DatabaseService.listDatabases({});
     return Res;
   };

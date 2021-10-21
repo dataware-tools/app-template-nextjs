@@ -19,6 +19,10 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
     }
   }, []);
 
+  if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
+    require("../mocks");
+  }
+
   const onRedirectCallback = (appState: AppState): void => {
     if (appState?.returnTo) {
       window.location.href = appState.returnTo;
