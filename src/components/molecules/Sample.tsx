@@ -1,5 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { databaseStore } from "@dataware-tools/app-common";
+import { metaStore } from "@dataware-tools/api-meta-store-client";
 import Button from "@mui/material/Button";
 import useSWR, { mutate } from "swr";
 
@@ -33,9 +33,9 @@ export const SamplePresentation = ({
 export const Sample = (): JSX.Element => {
   const { user, getAccessTokenSilently } = useAuth0();
   const fetchAPI = async () => {
-    databaseStore.OpenAPI.TOKEN = await getAccessTokenSilently();
-    databaseStore.OpenAPI.BASE = apiUrlBase + "/meta_store";
-    const Res = await databaseStore.DatabaseService.listDatabases({});
+    metaStore.OpenAPI.TOKEN = await getAccessTokenSilently();
+    metaStore.OpenAPI.BASE = apiUrlBase + "/meta_store";
+    const Res = await metaStore.DatabaseService.listDatabases({});
     return Res;
   };
   const URL = `${apiUrlBase}/databases`;
